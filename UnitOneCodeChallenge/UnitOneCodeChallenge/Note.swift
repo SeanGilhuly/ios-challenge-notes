@@ -32,6 +32,11 @@ class Note: Equatable {
         guard let timeStamp = dictionary[timeStampKey] as? NSDate,
             let title = dictionary[titleKey] as? String,
             let bodyText = dictionary[bodyTextKey] as? String else {
+                
+                self.timeStamp = NSDate()
+                self.title = ""
+                self.bodyText = ""
+                
                 return nil
             }
             self.timeStamp = timeStamp
