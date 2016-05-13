@@ -13,44 +13,54 @@ class NoteListViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var enterTextField: UITextField!
-    
     @IBOutlet weak var textViewField: UITextView!
+    
+   
+    var note: Note?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let note = note {
+            updateWithEntry(note)
+        }
     }
 
-    
+    // MARK: IBActions
     @IBAction func saveButton(sender: AnyObject) {
+        guard let note = note else {
+            let newNote = Note(timeStamp: NSDate(), title: enterTextField.text ?? "", bodyText: textViewField.text ?? "")
+            NoteController.sharedController.addNote(newNote)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+            return
+            }
+            note.title = enterTextField.text ?? ""
+            note.bodyText = textViewField.text ?? ""
         
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
   
     
-    
     @IBAction func clearButton(sender: AnyObject) {
+        enterTextField.text = ""
+        textViewField.text = ""
+    }
+    
+    //MARK: - Update Entry
+    func updateWithEntry(note: Note) {
+        self.note = note
         
+        self.enterTextField.text = note.title
+        self.textViewField.text = note.bodyText
     }
     
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+ 
+        textField.resignFirstResponder()
+        
+        return true
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

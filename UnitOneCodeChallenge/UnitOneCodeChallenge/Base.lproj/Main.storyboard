@@ -23,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="J0r-dw-g7j" kind="show" id="Ihl-5L-4mC"/>
+                                    <segue destination="J0r-dw-g7j" kind="show" identifier="editNote" id="Ihl-5L-4mC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" title="Notes" id="eBK-8R-meR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="b1a-5t-UcE">
                             <connections>
-                                <segue destination="J0r-dw-g7j" kind="show" id="sqL-dl-VR2"/>
+                                <segue destination="J0r-dw-g7j" kind="show" identifier="addNote" id="sqL-dl-VR2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -56,11 +56,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwo-cs-GXU">
-                                <rect key="frame" x="20" y="72" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DbZ-Gf-w1l">
                                 <rect key="frame" x="20" y="131" width="560" height="322"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,6 +73,11 @@
                                     <action selector="clearButton:" destination="J0r-dw-g7j" eventType="touchUpInside" id="Lds-7g-6wy"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwo-cs-GXU">
+                                <rect key="frame" x="20" y="64" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -128,6 +128,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sqL-dl-VR2"/>
+        <segue reference="Ihl-5L-4mC"/>
     </inferredMetricsTieBreakers>
 </document>
