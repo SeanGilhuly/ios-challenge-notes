@@ -8,6 +8,33 @@
 
 import Foundation
 
-class Note {
+class NoteController {
+    
+    static let sharedController = NoteController()
+    
+    var notes: [Note]
+    
+    init() {
+        self.notes = []
+    }
+    
+    
+    func addNote(note: Note) {
+        notes.append(note)
+    }
+    
+    
+    func removeNote(note: Note) {
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     
 }

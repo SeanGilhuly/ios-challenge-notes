@@ -47,7 +47,7 @@
         <!--Add Note-->
         <scene sceneID="sr5-Ml-bJ4">
             <objects>
-                <viewController id="J0r-dw-g7j" sceneMemberID="viewController">
+                <viewController id="J0r-dw-g7j" customClass="NoteListViewController" customModule="UnitOneCodeChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4vJ-xV-wZE"/>
                         <viewControllerLayoutGuide type="bottom" id="lHg-jL-Wry"/>
@@ -74,6 +74,9 @@
                                     <constraint firstAttribute="width" constant="46" id="6MM-C5-ApR"/>
                                 </constraints>
                                 <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButton:" destination="J0r-dw-g7j" eventType="touchUpInside" id="Lds-7g-6wy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,8 +93,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="x7c-YH-yh5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xuS-Ye-kvZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xuS-Ye-kvZ">
+                            <connections>
+                                <action selector="saveButton:" destination="J0r-dw-g7j" id="xI2-HD-bNr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="enterTextField" destination="vwo-cs-GXU" id="mbN-FH-TDg"/>
+                        <outlet property="textViewField" destination="DbZ-Gf-w1l" id="map-Ln-wYg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGj-4A-vcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

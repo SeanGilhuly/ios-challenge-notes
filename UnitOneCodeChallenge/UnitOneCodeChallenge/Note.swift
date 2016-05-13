@@ -8,11 +8,20 @@
 
 import Foundation
 
-class Note {
+class Note: Equatable {
+    
+    var timeStamp: NSDate
+    var title: String
+    var bodyText: String
+    
+    init(timeStamp: NSDate, title: String, bodyText: String) {
+        self.timeStamp = timeStamp
+        self.title = title
+        self.bodyText = bodyText
+    }
     
 }
 
-
-
-
-
+func ==(lhs: Note, rhs: Note) -> Bool {
+    return lhs.timeStamp == rhs.timeStamp && lhs.title == rhs.title && lhs.bodyText == rhs.bodyText
+}

@@ -10,12 +10,33 @@ import UIKit
 
 class NoteListViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var enterTextField: UITextField!
+    
+    @IBOutlet weak var textViewField: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func saveButton(sender: AnyObject) {
+        
+    }
+  
+    
+    
+    @IBAction func clearButton(sender: AnyObject) {
+        
+    }
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
